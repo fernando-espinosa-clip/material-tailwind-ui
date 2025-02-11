@@ -45,7 +45,7 @@ const contentWrapper = tv({
 })
 
 const input = tv({
-  base: "w-full bg-transparent  py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 border-0 pt-6",
+  base: "w-full bg-transparent py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 border-0 pt-6",
   variants: {
     hasStartContent: {
       true: "px-3",
@@ -58,10 +58,14 @@ const input = tv({
 })
 
 const labelStyles = tv({
-  base: "absolute left-3 transition-all duration-200",
+  base: "absolute transition-all duration-200",
   variants: {
+    hasStartContent: {
+      true: "left-3",
+      false: "left-0",
+    },
     floating: {
-      true: "top-2 text-xs",
+      true: "top-2 text-xs text-primary",
       false: "top-1/2 -translate-y-1/2 text-muted-foreground",
     },
     status: {
@@ -71,6 +75,7 @@ const labelStyles = tv({
     },
   },
   defaultVariants: {
+    hasStartContent: false,
     floating: false,
     status: "default",
   },
@@ -134,8 +139,9 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
               <Label
                 htmlFor={id}
                 className={labelStyles({
-                  floating: isFocused || hasValue,
+                  hasStartContent: !!startContent,
                   status: isFocused || hasValue ? status : "default",
+                  floating: isFocused || hasValue,
                 })}
               >
                 {label}
