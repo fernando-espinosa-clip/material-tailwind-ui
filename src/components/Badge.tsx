@@ -152,6 +152,11 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement>, Varia
     children?: React.ReactNode
     max?: number
     showZero?: boolean
+    color?: "default" | "primary" | "secondary" | "error" | "info" | "success" | "warning"
+    variant?: "standard" | "dot"
+    anchorOrigin?: "top-right" | "top-left" | "bottom-right" | "bottom-left"
+    overlap?: "rectangular" | "circular"
+    invisible?: boolean
 }
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
