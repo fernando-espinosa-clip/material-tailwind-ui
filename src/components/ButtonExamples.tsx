@@ -1,7 +1,7 @@
-import * as React from "react"
-import { Button } from "./Button"
-import { ArrowRight, ArrowLeft, Plus, Trash, Send } from "lucide-react"
-import Link from "./Link"
+import * as React from 'react';
+import { Button } from './Button';
+import { ArrowRight, ArrowLeft, Plus, Trash, Send } from 'lucide-react';
+import Link from './Link';
 
 export const ButtonExamples: React.FC = () => {
   return (
@@ -47,7 +47,9 @@ export const ButtonExamples: React.FC = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-xl font-semibold mb-2">Combinaciones de Variantes y Colores</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          Combinaciones de Variantes y Colores
+        </h2>
         <div className="flex flex-wrap gap-2">
           <Button variant="text" color="primary">
             Text Primary
@@ -86,19 +88,39 @@ export const ButtonExamples: React.FC = () => {
       <div>
         <h2 className="text-xl font-semibold mb-2">Botones con Iconos</h2>
         <div className="flex flex-wrap gap-2">
-          <Button variant="contained" color="primary" leftIcon={<ArrowLeft className="w-4 h-4" />}>
+          <Button
+            variant="contained"
+            color="primary"
+            leftIcon={<ArrowLeft className="w-4 h-4" />}
+          >
             Anterior
           </Button>
-          <Button variant="contained" color="primary" rightIcon={<ArrowRight className="w-4 h-4" />}>
+          <Button
+            variant="contained"
+            color="primary"
+            rightIcon={<ArrowRight className="w-4 h-4" />}
+          >
             Siguiente
           </Button>
-          <Button variant="contained" color="success" leftIcon={<Plus className="w-4 h-4" />}>
+          <Button
+            variant="contained"
+            color="success"
+            leftIcon={<Plus className="w-4 h-4" />}
+          >
             Agregar
           </Button>
-          <Button variant="contained" color="error" leftIcon={<Trash className="w-4 h-4" />}>
+          <Button
+            variant="contained"
+            color="error"
+            leftIcon={<Trash className="w-4 h-4" />}
+          >
             Eliminar
           </Button>
-          <Button variant="contained" color="info" rightIcon={<Send className="w-4 h-4" />}>
+          <Button
+            variant="contained"
+            color="info"
+            rightIcon={<Send className="w-4 h-4" />}
+          >
             Enviar
           </Button>
         </div>
@@ -130,13 +152,20 @@ export const ButtonExamples: React.FC = () => {
           >
             Enlace Externo
           </Button>
-          <Button component={Link} href="/about" variant="outlined" color="primary">
+          <Button
+            component={Link}
+            href="/about"
+            variant="outlined"
+            color="primary"
+          >
             Enlace Interno (Next.js Link)
           </Button>
         </div>
       </div>
       <div>
-        <h2 className="text-xl font-semibold mb-2">Botones de Ancho Completo</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          Botones de Ancho Completo
+        </h2>
         <div className="space-y-2">
           <Button fullWidth variant="contained" color="primary">
             Botón de Ancho Completo
@@ -150,7 +179,9 @@ export const ButtonExamples: React.FC = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-xl font-semibold mb-2">Nuevos Ejemplos de Colores</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          Nuevos Ejemplos de Colores
+        </h2>
         <div className="flex flex-wrap gap-2">
           <Button variant="contained" color="warning">
             Warning Contained
@@ -167,6 +198,5 @@ export const ButtonExamples: React.FC = () => {
         </div>
       </div>
     </div>
-  )
-}
-
+  );
+};

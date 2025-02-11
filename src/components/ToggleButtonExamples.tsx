@@ -1,24 +1,37 @@
-import type React from "react"
-import { useState } from "react"
-import { ToggleButton, ToggleButtonGroup } from "@/components/ToggleButtonGroup"
-import { AlignLeft, AlignCenter, AlignRight, AlignJustify, Bold, Italic, Underline } from "lucide-react"
+import type React from 'react';
+import { useState } from 'react';
+import {
+  ToggleButton,
+  ToggleButtonGroup,
+} from '@/components/ToggleButtonGroup';
+import {
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  AlignJustify,
+  Bold,
+  Italic,
+  Underline,
+} from 'lucide-react';
 
 export const ToggleButtonExamples: React.FC = () => {
-  const [alignment, setAlignment] = useState<string>("left")
-  const [formats, setFormats] = useState<string[]>([])
+  const [alignment, setAlignment] = useState<string>('left');
+  const [formats, setFormats] = useState<string[]>([]);
 
   const handleAlignment = (newAlignment: string | string[]) => {
-    setAlignment(newAlignment as string)
-  }
+    setAlignment(newAlignment as string);
+  };
 
   const handleFormats = (newFormats: string | string[]) => {
-    setFormats(newFormats as string[])
-  }
+    setFormats(newFormats as string[]);
+  };
 
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-xl font-semibold mb-2">Toggle Button Group con Efecto Ripple (Colores)</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          Toggle Button Group con Efecto Ripple (Colores)
+        </h2>
         <div className="space-y-4">
           <ToggleButtonGroup
             value={alignment}
@@ -107,9 +120,16 @@ export const ToggleButtonExamples: React.FC = () => {
       </div>
 
       <div>
-        <h2 className="text-xl font-semibold mb-2">Toggle Button Group con Efecto Ripple (Texto)</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          Toggle Button Group con Efecto Ripple (Texto)
+        </h2>
         <div className="space-y-4">
-          <ToggleButtonGroup value={formats} onChange={handleFormats} color="primary" aria-label="text formatting">
+          <ToggleButtonGroup
+            value={formats}
+            onChange={handleFormats}
+            color="primary"
+            aria-label="text formatting"
+          >
             <ToggleButton value="bold" aria-label="bold">
               <Bold className="h-4 w-4 mr-2" />
               Bold
@@ -124,7 +144,12 @@ export const ToggleButtonExamples: React.FC = () => {
             </ToggleButton>
           </ToggleButtonGroup>
 
-          <ToggleButtonGroup value={formats} onChange={handleFormats} color="secondary" aria-label="text formatting">
+          <ToggleButtonGroup
+            value={formats}
+            onChange={handleFormats}
+            color="secondary"
+            aria-label="text formatting"
+          >
             <ToggleButton value="bold" aria-label="bold">
               <Bold className="h-4 w-4 mr-2" />
               Bold
@@ -142,7 +167,9 @@ export const ToggleButtonExamples: React.FC = () => {
       </div>
 
       <div>
-        <h2 className="text-xl font-semibold mb-2">Vertical Toggle Button Group con Efecto Ripple</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          Vertical Toggle Button Group con Efecto Ripple
+        </h2>
         <div className="flex gap-4">
           <ToggleButtonGroup
             orientation="vertical"
@@ -184,9 +211,16 @@ export const ToggleButtonExamples: React.FC = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-xl font-semibold mb-2">Toggle Button Group con Texto e Iconos Centrados</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          Toggle Button Group con Texto e Iconos Centrados
+        </h2>
         <div className="space-y-4">
-          <ToggleButtonGroup value={formats} onChange={handleFormats} color="primary" aria-label="text formatting">
+          <ToggleButtonGroup
+            value={formats}
+            onChange={handleFormats}
+            color="primary"
+            aria-label="text formatting"
+          >
             <ToggleButton value="bold" aria-label="bold">
               <Bold className="h-4 w-4" />
               <span>Bold</span>
@@ -268,6 +302,5 @@ export const ToggleButtonExamples: React.FC = () => {
         </div>
       </div>
     </div>
-  )
-}
-
+  );
+};

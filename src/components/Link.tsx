@@ -1,5 +1,5 @@
-import * as React from "react";
-import { tv } from "tailwind-variants";
+import * as React from 'react';
+import { tv } from 'tailwind-variants';
 
 type LinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
@@ -8,7 +8,7 @@ type LinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 };
 
 const linkClasses = tv({
-  base: "text-blue-500 hover:underline",
+  base: 'text-blue-500 hover:underline',
   variants: {},
   defaultVariants: {}, // Puedes agregar variantes específicas si lo necesitas
 });
@@ -17,15 +17,15 @@ const Link: React.FC<LinkProps> = ({ href, children, className, ...props }) => {
   const isExternal = /^(http|https):\/\//.test(href);
 
   return (
-      <a
-          href={href}
-          target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noopener noreferrer" : undefined}
-          className={linkClasses({ className })}
-          {...props}
-      >
-        {children}
-      </a>
+    <a
+      href={href}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+      className={linkClasses({ className })}
+      {...props}
+    >
+      {children}
+    </a>
   );
 };
 

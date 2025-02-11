@@ -1,53 +1,63 @@
-import * as React from "react"
-import { createContext, useContext } from "react"
-import { tv, type VariantProps } from "tailwind-variants"
+import * as React from 'react';
+import { createContext, useContext } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 const toggleButtonGroup = tv({
-  base: "inline-flex border rounded-md overflow-hidden",
+  base: 'inline-flex border rounded-md overflow-hidden',
   variants: {
     orientation: {
-      horizontal: "flex-row",
-      vertical: "flex-col [&>button]:border-r-0 [&>button]:border-b [&>button:last-child]:border-b-0",
+      horizontal: 'flex-row',
+      vertical:
+        'flex-col [&>button]:border-r-0 [&>button]:border-b [&>button:last-child]:border-b-0',
     },
     size: {
-      sm: "",
-      default: "",
-      lg: "",
+      sm: '',
+      default: '',
+      lg: '',
     },
     color: {
-      default: "border-input bg-white",
-      primary: "border-primary-border",
-      secondary: "border-secondary-border",
-      error: "border-error-border",
-      warning: "border-warning-border",
-      info: "border-info-border",
-      success: "border-success-border",
+      default: 'border-input bg-white',
+      primary: 'border-primary-border',
+      secondary: 'border-secondary-border',
+      error: 'border-error-border',
+      warning: 'border-warning-border',
+      info: 'border-info-border',
+      success: 'border-success-border',
     },
   },
   defaultVariants: {
-    orientation: "horizontal",
-    size: "default",
-    color: "default",
+    orientation: 'horizontal',
+    size: 'default',
+    color: 'default',
   },
-})
+});
 
 interface ToggleButtonGroupContextType {
-  value: string | string[]
-  onChange: (value: string | string[]) => void
-  exclusive: boolean
-  size?: "sm" | "default" | "lg"
-  color?: "default" | "primary" | "secondary" | "error" | "warning" | "info" | "success"
+  value: string | string[];
+  onChange: (value: string | string[]) => void;
+  exclusive: boolean;
+  size?: 'sm' | 'default' | 'lg';
+  color?:
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'error'
+    | 'warning'
+    | 'info'
+    | 'success';
 }
 
-const ToggleButtonGroupContext = createContext<ToggleButtonGroupContextType | undefined>(undefined)
+const ToggleButtonGroupContext = createContext<
+  ToggleButtonGroupContextType | undefined
+>(undefined);
 
 export interface ToggleButtonGroupProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof toggleButtonGroup> {
-  value: string | string[]
-  onChange: (value: string | string[]) => void
-  exclusive?: boolean
-  children: React.ReactNode
+  value: string | string[];
+  onChange: (value: string | string[]) => void;
+  exclusive?: boolean;
+  children: React.ReactNode;
 }
 
 export const ToggleButtonGroup: React.FC<ToggleButtonGroupProps> = ({
@@ -57,43 +67,52 @@ export const ToggleButtonGroup: React.FC<ToggleButtonGroupProps> = ({
   onChange,
   exclusive = false,
   children,
-  size = "default",
-  color = "default",
+  size = 'default',
+  color = 'default',
   ...props
 }) => {
   const handleChange = (buttonValue: string) => {
     if (exclusive) {
-      onChange(buttonValue)
+      onChange(buttonValue);
     } else {
-      const newValue = Array.isArray(value) ? value : [value]
-      const index = newValue.indexOf(buttonValue)
+      const newValue = Array.isArray(value) ? value : [value];
+      const index = newValue.indexOf(buttonValue);
       if (index === -1) {
-        onChange([...newValue, buttonValue])
+        onChange([...newValue, buttonValue]);
       } else {
-        onChange(newValue.filter((v) => v !== buttonValue))
+        onChange(newValue.filter((v) => v !== buttonValue));
       }
     }
-  }
+  };
 
   return (
-    <ToggleButtonGroupContext.Provider value={{ value, onChange: handleChange, exclusive, size, color }}>
-      <div className={toggleButtonGroup({ orientation, size, color, className })} role="group" {...props}>
+    <ToggleButtonGroupContext.Provider
+      value={{ value, onChange: handleChange, exclusive, size, color }}
+    >
+      <div
+        className={toggleButtonGroup({ orientation, size, color, className })}
+        role="group"
+        {...props}
+      >
         {children}
       </div>
     </ToggleButtonGroupContext.Provider>
-  )
-}
+  );
+};
 
 export const useToggleButtonGroup = () => {
-  const context = useContext(ToggleButtonGroupContext)
+  const context = useContext(ToggleButtonGroupContext);
   if (!context) {
-    throw new Error("ToggleButton must be used within a ToggleButtonGroup")
+    throw new Error('ToggleButton must be used within a ToggleButtonGroup');
   }
-  return context
-}
+  return context;
+};
 
 // Modify the ToggleButton component to use the ToggleButtonGroup context
-import { ToggleButton as BaseToggleButton, type ToggleButtonProps } from "./ToggleButton"
+import {
+  ToggleButton as BaseToggleButton,
+  type ToggleButtonProps,
+} from './ToggleButton';
 
 export const ToggleButton: React.FC<ToggleButtonProps> = ({
   value,
@@ -101,8 +120,15 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
   color: buttonColor,
   ...props
 }) => {
-  const { value: groupValue, onChange, exclusive, size: groupSize, color: groupColor } = useToggleButtonGroup()
-  const isSelected = Array.isArray(groupValue) ? groupValue.includes(value.toString()) : groupValue === value.toString()
+  const {
+    value: groupValue,
+    onChange,
+    size: groupSize,
+    color: groupColor,
+  } = useToggleButtonGroup();
+  const isSelected = Array.isArray(groupValue)
+    ? groupValue.includes(value.toString())
+    : groupValue === value.toString();
 
   return (
     <BaseToggleButton
@@ -113,6 +139,5 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
       color={buttonColor || groupColor}
       onClick={() => onChange(value.toString())}
     />
-  )
-}
-
+  );
+};
