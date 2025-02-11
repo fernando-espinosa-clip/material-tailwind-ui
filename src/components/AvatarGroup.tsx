@@ -6,9 +6,9 @@ const avatarGroup = tv({
   base: 'flex items-center -space-x-2',
   variants: {
     spacing: {
-      small: '-space-x-1',
+      small: '-space-x-3',
       medium: '-space-x-2',
-      large: '-space-x-3',
+      large: '-space-x-1',
     },
   },
   defaultVariants: {

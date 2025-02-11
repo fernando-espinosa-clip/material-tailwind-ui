@@ -89,7 +89,7 @@ export const AvatarExample = () => {
       <div>
         <h2 className="text-xl font-semibold mb-4">Grouped</h2>
         <div className="space-y-4">
-          <AvatarGroup>
+          <AvatarGroup spacing={'small'}>
             <Avatar
               alt="Remy Sharp"
               src="https://mui.com/static/images/avatar/1.jpg"
@@ -112,7 +112,7 @@ export const AvatarExample = () => {
             />
           </AvatarGroup>
 
-          <AvatarGroup max={4}>
+          <AvatarGroup spacing={'medium'} max={4}>
             <Avatar
               alt="Remy Sharp"
               src="https://mui.com/static/images/avatar/1.jpg"
@@ -135,7 +135,7 @@ export const AvatarExample = () => {
             />
           </AvatarGroup>
 
-          <AvatarGroup spacing="small" max={4} total={24}>
+          <AvatarGroup spacing="large" max={4} total={24}>
             <Avatar
               alt="Remy Sharp"
               src="https://mui.com/static/images/avatar/1.jpg"

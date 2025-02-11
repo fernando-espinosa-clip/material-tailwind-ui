@@ -1,4 +1,4 @@
-import * as React from 'react';
+import type React from 'react';
 import { useState, useLayoutEffect, useCallback } from 'react';
 
 interface RippleProps {
