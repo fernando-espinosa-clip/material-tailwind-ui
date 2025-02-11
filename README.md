@@ -2,7 +2,7 @@
 
 ## 🚀 Project Overview
 
-Welcome to Material Tailwind UI, where the power of Material-UI (MUI) components meets the flexibility of Tailwind CSS! 🌈 This exciting project showcases the beautiful transformation of MUI components into a custom, Tailwind-powered UI library. Get ready to experience the best of both worlds! 🌟
+Welcome to Material Tailwind UI, where the power of Material-UI (MUI) components meets the flexibility of Tailwind CSS! 🌈 This exciting project showcases the beautiful transformation of MUI components into a custom, Tailwind-powered UI library. With an expanding set of components, including buttons, form elements, and data display components, we're creating a comprehensive design system. Get ready to experience the best of both worlds! 🌟
 
 ## 🌟 Features
 
@@ -20,9 +20,13 @@ We've lovingly crafted these amazing components for you:
 - 🖱️ IconButton - Icons that pack a punch
 - ✏️ TextField - Type your heart out
 - 🔀 ToggleButton and ToggleButtonGroup - Flip the switch
-- 🏷️ Badge - Show off those notifications
+- 🏷️ Chip - Etiquetas interactivas y personalizables
+- 🖼️ Avatar and AvatarGroup - Representación visual de usuarios o entidades
+- 🔔 Badge - Notificaciones y contadores visuales
 - 📝 Typography - Text that speaks volumes
 - 😎 Avatar and AvatarGroup - Put a face to the name
+- 🔤 Typography - Sistema de tipografía consistente y personalizable
+
 
 ## 🚀 Installation
 
