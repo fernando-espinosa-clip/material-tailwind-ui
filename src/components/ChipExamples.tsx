@@ -28,7 +28,7 @@ export const ChipExamples = () => {
           <Chip
             label="Custom delete icon"
             onDelete={handleDelete}
-            deleteIcon={<Check className="h-4 w-4" />}
+            deleteIcon={<Check />}
           />
           <Chip label="Custom color" color="primary" />
         </div>
@@ -51,7 +51,7 @@ export const ChipExamples = () => {
             label="Custom delete icon"
             variant="outlined"
             onDelete={handleDelete}
-            deleteIcon={<Check className="h-4 w-4" />}
+            deleteIcon={<Check />}
           />
           <Chip label="Custom color" variant="outlined" color="primary" />
         </div>
@@ -120,12 +120,8 @@ export const ChipExamples = () => {
       <div>
         <h2 className="text-xl font-semibold mb-4">Chip with icon</h2>
         <div className="flex flex-wrap gap-2">
-          <Chip icon={<Face className="h-4 w-4" />} label="With Icon" />
-          <Chip
-            icon={<Face className="h-4 w-4" />}
-            label="With Icon"
-            variant="outlined"
-          />
+          <Chip icon={<Face />} label="With Icon" />
+          <Chip icon={<Face />} label="With Icon" variant="outlined" />
         </div>
       </div>
 
@@ -136,14 +132,14 @@ export const ChipExamples = () => {
             component="a"
             href="#basic-chip"
             clickable
-            icon={<Home className="h-4 w-4" />}
+            icon={<Home />}
             label="Clickable Link"
           />
           <Chip
             component="a"
             href="#basic-chip"
             clickable
-            icon={<Home className="h-4 w-4" />}
+            icon={<Home />}
             label="Clickable Link"
             variant="outlined"
           />

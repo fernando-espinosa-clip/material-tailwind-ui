@@ -57,7 +57,7 @@ const variantTagMap = {
 export interface TypographyProps
   extends React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof typography> {
-  component?: keyof JSX.IntrinsicElements;
+  component?: keyof React.JSX.IntrinsicElements;
   gutterBottom?: boolean;
   noWrap?: boolean;
   paragraph?: boolean;
@@ -78,9 +78,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
     ref
   ) => {
     const Component = (component ||
-      (paragraph
-        ? 'p'
-        : variantTagMap[variant])) as keyof React.JSX.IntrinsicElements;
+      (paragraph ? 'p' : variantTagMap[variant])) as React.ElementType;
 
     return (
       <Component

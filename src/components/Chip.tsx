@@ -122,12 +122,12 @@ const chip = tv({
 });
 
 const deleteIconStyles = tv({
-  base: 'ml-1 -mr-1 rounded-full hover:bg-black/10 transition-colors',
+  base: 'ml-1 -mr-1 rounded-full transition-colors text-text-primary  hover:text-text-primary/60  z-ripple',
   variants: {
     size: {
-      small: 'h-4 w-4 p-0.5',
-      medium: 'h-5 w-5 p-0.5',
-      large: 'h-6 w-6 p-1',
+      small: 'h-4 w-4 [&>svg]:w-4 [&>svg]:h-4 p-0',
+      medium: 'h-5 w-5 [&>svg]:w-5 [&>svg]:h-5 p-0',
+      large: 'h-6 w-6 [&>svg]:w-6 [&>svg]:h-6 p-0',
     },
   },
   defaultVariants: {
