@@ -4,6 +4,7 @@ import { ToggleButtonExamples } from '@/components/ToggleButtonExamples';
 import { TextFieldExample } from '@/components/TextFieldExample';
 import { BadgeExamples } from '@/components/BadgeExamples';
 import { TypographyExample } from '@/components/TypographyExample';
+import { AvatarExample } from '@/components/AvatarExample';
 
 export default function Home() {
   return (
@@ -12,6 +13,10 @@ export default function Home() {
         Bienvenido a la Migración de MUI a Tailwind CSS
       </h1>
       <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Avatar Examples</h2>
+          <AvatarExample />
+        </section>
         <section>
           <h2 className="text-2xl font-bold mb-4">Typography Examples</h2>
           <TypographyExample />
