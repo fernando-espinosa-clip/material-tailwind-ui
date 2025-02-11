@@ -4,7 +4,8 @@ import { tv, type VariantProps } from "tailwind-variants"
 const badge = tv({
     slots: {
         base: "relative inline-flex",
-        badge: "flex items-center justify-center absolute min-w-[20px] h-5 px-1 text-[0.75rem] font-medium rounded-full",
+        badge:
+            "flex items-center justify-center absolute min-w-[20px] h-5 px-1 text-[0.75rem] font-medium rounded-full transition-all duration-300 ease-in-out",
     },
     variants: {
         color: {
@@ -62,12 +63,12 @@ const badge = tv({
         },
         invisible: {
             true: {
-                badge: "hidden",
+                badge: "opacity-0 scale-0",
             },
         },
         showZero: {
             false: {
-                badge: "hidden",
+                badge: "opacity-0 scale-0",
             },
         },
         max: {
