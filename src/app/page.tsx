@@ -9,51 +9,79 @@ import { TypographyExample } from '@/components/TypographyExample';
 import { AvatarExample } from '@/components/AvatarExample';
 import { ChipExamples } from '@/components/ChipExamples';
 import { SwitchExamples } from '@/components/SwitchExamples';
+import type React from 'react'; // Added import for React
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">
-        Bienvenido a la Migración de MUI a Tailwind CSS
-      </h1>
-      <div className="space-y-8">
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Switch Examples</h2>
-          <SwitchExamples />
-        </section>
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Chip Examples</h2>
-          <ChipExamples />
-        </section>
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Avatar Examples</h2>
-          <AvatarExample />
-        </section>
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Typography Examples</h2>
-          <TypographyExample />
-        </section>
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Badge Examples</h2>
-          <BadgeExamples />
-        </section>
-        <section>
-          <h2 className="text-2xl font-bold mb-4">TextField Examples</h2>
-          <TextFieldExample />
-        </section>
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Button Examples</h2>
-          <ButtonExamples />
-        </section>
-        <section>
-          <h2 className="text-2xl font-bold mb-4">IconButton Examples</h2>
-          <IconButtonExamples />
-        </section>
-        <section>
-          <h2 className="text-2xl font-bold mb-4">ToggleButton Examples</h2>
-          <ToggleButtonExamples />
-        </section>
-      </div>
+    <div className="min-h-screen bg-gray-50">
+      <header className="bg-white shadow">
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold text-gray-900">
+            MUI to Tailwind CSS Migration
+          </h1>
+        </div>
+      </header>
+      <main>
+        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+          <div className="px-4 py-6 sm:px-0">
+            <ExampleSection
+              title="Switch Examples"
+              component={<SwitchExamples />}
+            />
+            <ExampleSection
+              title="Chip Examples"
+              component={<ChipExamples />}
+            />
+            <ExampleSection
+              title="Avatar Examples"
+              component={<AvatarExample />}
+            />
+            <ExampleSection
+              title="Typography Examples"
+              component={<TypographyExample />}
+            />
+            <ExampleSection
+              title="Badge Examples"
+              component={<BadgeExamples />}
+            />
+            <ExampleSection
+              title="TextField Examples"
+              component={<TextFieldExample />}
+            />
+            <ExampleSection
+              title="Button Examples"
+              component={<ButtonExamples />}
+            />
+            <ExampleSection
+              title="IconButton Examples"
+              component={<IconButtonExamples />}
+            />
+            <ExampleSection
+              title="ToggleButton Examples"
+              component={<ToggleButtonExamples />}
+            />
+          </div>
+        </div>
+      </main>
     </div>
+  );
+}
+
+function ExampleSection({
+  title,
+  component,
+}: {
+  title: string;
+  component: React.ReactNode;
+}) {
+  return (
+    <section className="bg-white shadow rounded-lg overflow-hidden">
+      <div className="px-4 py-5 sm:px-6">
+        <h2 className="text-lg font-medium leading-6 text-gray-900">{title}</h2>
+      </div>
+      <div className="border-t border-gray-200">
+        <div className="px-4 py-5 sm:p-6">{component}</div>
+      </div>
+    </section>
   );
 }
