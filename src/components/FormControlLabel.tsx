@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 import { Label } from './Label';
-import { useFormControl } from './FormControl';
+import { useFormControl, FormControl } from './FormControl';
 
 const formControlLabel = tv({
-  base: 'inline-flex items-center cursor-pointer select-none',
+  base: 'inline-flex items-center cursor-pointer select-none text-base',
   variants: {
     disabled: {
       true: 'cursor-not-allowed opacity-50',
@@ -98,22 +98,22 @@ export const FormControlLabel = React.forwardRef<
     });
 
     return (
-      <label
-        ref={ref}
-        className={formControlLabel({
-          disabled,
-          error,
-          required,
-          labelPlacement,
-          className,
-        })}
-        {...props}
-      >
-        {controlElement}
-        <span className={labelSpacing({ labelPlacement })}>
-          <Label className="form-label cursor-inherit">{label}</Label>
-        </span>
-      </label>
+      <FormControl>
+        <Label
+          ref={ref}
+          className={formControlLabel({
+            disabled,
+            error,
+            required,
+            labelPlacement,
+            className,
+          })}
+          {...props}
+        >
+          {controlElement}
+          <span className={labelSpacing({ labelPlacement })}>{label}</span>
+        </Label>
+      </FormControl>
     );
   }
 );
