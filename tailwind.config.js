@@ -137,6 +137,7 @@ module.exports = {
       },
       animation: {
         'focus-ripple': 'focus-ripple 2.5s ease-out infinite',
+        'focus-ripple-switch': 'focus-ripple-switch 1.5s ease-in-out infinite',
       },
       boxShadow: {
         switchShadow:
