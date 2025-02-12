@@ -1,3 +1,5 @@
+'use client';
+
 import { ButtonExamples } from '@/components/ButtonExamples';
 import { IconButtonExamples } from '@/components/IconButtonExamples';
 import { ToggleButtonExamples } from '@/components/ToggleButtonExamples';
@@ -6,6 +8,7 @@ import { BadgeExamples } from '@/components/BadgeExamples';
 import { TypographyExample } from '@/components/TypographyExample';
 import { AvatarExample } from '@/components/AvatarExample';
 import { ChipExamples } from '@/components/ChipExamples';
+import { SwitchExamples } from '@/components/SwitchExamples';
 
 export default function Home() {
   return (
@@ -14,6 +17,10 @@ export default function Home() {
         Bienvenido a la Migración de MUI a Tailwind CSS
       </h1>
       <div className="space-y-8">
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Switch Examples</h2>
+          <SwitchExamples />
+        </section>
         <section>
           <h2 className="text-2xl font-bold mb-4">Chip Examples</h2>
           <ChipExamples />
