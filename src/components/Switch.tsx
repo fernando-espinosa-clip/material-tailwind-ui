@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { tv, type VariantProps } from 'tailwind-variants';
+import { tv } from 'tailwind-variants';
 import { useFormControl } from './FormControl';
 import { useState } from 'react';
 
@@ -184,7 +184,7 @@ export type SwitchProps = Omit<
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
   (
     {
-      className,
+      // className,
       checked,
       defaultChecked,
       disabled: disabledProp,
